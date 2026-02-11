@@ -1,5 +1,5 @@
 # -*- mode: ruby -*-
-# # vi: set ft=ruby :
+# # vi: set ft=ruby  tyhj:
 
 $subnet = "192.168.57"
 $num_dns = 1 #max 9
