@@ -1,0 +1,22 @@
+---
+
+- name: "Installation de BIND9 sur les serveurs DNS"
+  hosts: dns
+  become: yes
+  tasks:
+  - name: "Mise à jour des dépôts apt"
+    ansible.builtin.apt:
+        update_cache: yes
+
+  - name: "Installation de bind9"
+    package:
+        name: bind9
+        state: present
+
+
+- name: "Reconfiguration de l'ensemble des hôtes pour utiliser les DNS internes"
+  hosts: all
+  become: yes
+  tasks:
+    - name: "Importation des tâches de configuration DNS"
+      ansible.builtin.import_tasks: tasks/set_dns.yml
