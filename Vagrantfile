@@ -1,6 +1,6 @@
 # -*- mode: ruby -*-
 # # vi: set ft=ruby :
-# agrantfile pour le TP R405. Configure les VM Load-Balancer, DNS et Web pour la génération par Vagrant
+
 $subnet = "192.168.57"
 $num_dns = 1 #max 9
 $num_web = 1 #max 9
